@@ -1,0 +1,8 @@
+source 'https://rubygems.org'
+gem 'twilio-ruby', '~> 5.37.0'
+gem 'dotenv'
+gem 'crack'
+gem 'json'
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'rake'

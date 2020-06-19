@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TwilioSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="zbU-ms-nFd" customClass="TVIVideoView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="M7p-Te-3gV" customClass="TVIVideoView">
+                                <rect key="frame" x="249" y="624.5" width="145" height="217.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="M7p-Te-3gV" secondAttribute="height" multiplier="2:3" id="3hv-HM-wyW"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WM-1S-5by">
+                                <rect key="frame" x="20" y="806" width="75" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Connect"/>
+                                <connections>
+                                    <action selector="connectWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OpM-bL-BQK"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GA3-zY-CxP">
+                                <rect key="frame" x="8" y="806" width="99" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Disconnect"/>
+                                <connections>
+                                    <action selector="disconnectWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="stH-ae-7tC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="M7p-Te-3gV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.35" id="1Db-WW-b67"/>
+                            <constraint firstItem="zbU-ms-nFd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="57r-Lg-Vj0"/>
+                            <constraint firstItem="GA3-zY-CxP" firstAttribute="centerX" secondItem="1WM-1S-5by" secondAttribute="centerX" id="9MW-op-9W7"/>
+                            <constraint firstItem="zbU-ms-nFd" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9dC-W2-Am3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zbU-ms-nFd" secondAttribute="trailing" id="Pzg-lu-Ie2"/>
+                            <constraint firstItem="1WM-1S-5by" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Rj8-Eh-VuJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1WM-1S-5by" secondAttribute="bottom" constant="20" id="UtW-oV-dtD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="M7p-Te-3gV" secondAttribute="bottom" constant="20" id="ZAh-dP-gyn"/>
+                            <constraint firstItem="zbU-ms-nFd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cGX-aH-4Yy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M7p-Te-3gV" secondAttribute="trailing" constant="20" id="kFG-8G-4Tv"/>
+                            <constraint firstItem="GA3-zY-CxP" firstAttribute="centerY" secondItem="1WM-1S-5by" secondAttribute="centerY" id="xNz-c7-xUQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="connectButton" destination="1WM-1S-5by" id="G3L-eM-UEd"/>
+                        <outlet property="disconnectButton" destination="GA3-zY-CxP" id="abb-jb-ksz"/>
+                        <outlet property="previewView" destination="M7p-Te-3gV" id="c1G-RT-ngL"/>
+                        <outlet property="remoteView" destination="zbU-ms-nFd" id="bPH-DO-tzE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+        </scene>
+    </scenes>
+</document>
